@@ -1,0 +1,133 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String   @id @default(cuid())
+  email           String   @unique
+  name            String?
+  hashedPassword  String?
+  locale          String   @default("en")
+  theme           String   @default("light")
+  defaultLocationLat  Float?
+  defaultLocationLng  Float?
+  defaultLocationPlace String?
+  defaultLocationTz    String?
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  charts          Chart[]
+  savedViews      SavedView[]
+  auditLogs       AuditLog[]
+  accounts        Account[]
+  sessions        Session[]
+  
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model Chart {
+  id          String   @id @default(cuid())
+  userId      String
+  label       String
+  
+  // Person details
+  firstName   String?
+  lastName    String?
+  gender      String?
+  notes       String?
+  
+  // Birth details
+  birthDateTime DateTime
+  timezone      String
+  latitude      Float
+  longitude     Float
+  placeName     String
+  
+  // Chart settings
+  system        String   @default("vedic") // vedic, western, kp
+  houseSystem   String   @default("placidus")
+  ayanamsha     String   @default("lahiri")
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  savedViews    SavedView[]
+  computationCache ComputationCache[]
+  
+  @@map("charts")
+}
+
+model ComputationCache {
+  id          String   @id @default(cuid())
+  chartId     String
+  inputHash   String
+  resultJSON  Json
+  createdAt   DateTime @default(now())
+  
+  chart       Chart    @relation(fields: [chartId], references: [id], onDelete: Cascade)
+  
+  @@unique([chartId, inputHash])
+  @@map("computation_cache")
+}
+
+model SavedView {
+  id          String   @id @default(cuid())
+  userId      String
+  chartId     String
+  layoutJSON  Json
+  createdAt   DateTime @default(now())
+  
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  chart       Chart    @relation(fields: [chartId], references: [id], onDelete: Cascade)
+  
+  @@map("saved_views")
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String
+  action    String
+  payload   Json?
+  createdAt DateTime @default(now())
+  
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("audit_logs")
+}
