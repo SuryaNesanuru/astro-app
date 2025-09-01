@@ -1,6 +1,6 @@
 const { execSync } = require('child_process');
 
-console.log('🧪 Running AstroSuite Pro Tests...\n');
+console.log('🧪 Running Prerana Astro Tests...\n');
 
 try {
   // Run Jest tests with coverage

@@ -33,7 +33,7 @@ export default function Dashboard() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-2">Welcome back, {session.user?.name || 'User'}</h1>
         <p className="text-muted-foreground">
-          Create charts, analyze planetary positions, and explore astrological insights with AstroSuite Pro.
+          Create charts, analyze planetary positions, and explore astrological insights with Prerana Astro.
         </p>
       </div>
 
@@ -212,7 +212,7 @@ export default function Dashboard() {
                   <Star className="h-5 w-5 text-primary" />
                   <div className="text-left">
                     <div className="font-medium">Help & Documentation</div>
-                    <div className="text-xs text-muted-foreground">Learn about AstroSuite Pro</div>
+                    <div className="text-xs text-muted-foreground">Learn about Prerana Astro</div>
                   </div>
                 </div>
               </Button>

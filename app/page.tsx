@@ -70,7 +70,7 @@ export default function Home() {
     {
       name: "Dr. Priya Sharma",
       role: "Professional Astrologer",
-      content: "AstroSuite Pro has revolutionized my practice. The accuracy and ease of use are unmatched.",
+      content: "Prerana Astro has revolutionized my practice. The accuracy and ease of use are unmatched.",
       rating: 5
     },
     {
@@ -82,7 +82,7 @@ export default function Home() {
     {
       name: "Meera Patel",
       role: "Life Coach",
-      content: "I use AstroSuite Pro daily for client consultations. It's become an essential tool in my toolkit.",
+      content: "I use Prerana Astro daily for client consultations. It's become an essential tool in my toolkit.",
       rating: 5
     }
   ]
@@ -107,7 +107,7 @@ export default function Home() {
             </Badge>
             
             <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-6 leading-tight">
-              AstroSuite Pro
+              Prerana Astro
             </h1>
             
             <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -220,7 +220,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-              Why Choose AstroSuite Pro?
+              Why Choose Prerana Astro?
             </h2>
           </div>
 
@@ -266,7 +266,7 @@ export default function Home() {
               Trusted by Professionals
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300">
-              See what astrologers and enthusiasts are saying about AstroSuite Pro
+              See what astrologers and enthusiasts are saying about Prerana Astro
             </p>
           </div>
 
@@ -302,7 +302,7 @@ export default function Home() {
             Ready to Explore the Cosmos?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of astrologers and enthusiasts who trust AstroSuite Pro for their daily astrological work
+            Join thousands of astrologers and enthusiasts who trust Prerana Astro for their daily astrological work
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {session ? (
@@ -345,13 +345,13 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center mb-6">
             <Compass className="h-8 w-8 mr-3 text-blue-400" />
-            <span className="text-2xl font-bold">AstroSuite Pro</span>
+            <span className="text-2xl font-bold">Prerana Astro</span>
           </div>
           <p className="text-slate-400 mb-4">
             Professional astrology software powered by Swiss Ephemeris
           </p>
           <div className="flex justify-center space-x-6 text-sm text-slate-400">
-            <span>© 2024 AstroSuite Pro</span>
+            <span>© 2024 Prerana Astro</span>
             <span>•</span>
             <span>Privacy Policy</span>
             <span>•</span>

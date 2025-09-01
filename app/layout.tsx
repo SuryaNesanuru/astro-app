@@ -8,13 +8,13 @@ import { Navigation } from '@/components/layout/navigation'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'AstroSuite Pro - Professional Astrology Software',
+  title: 'Prerana Astro - Professional Astrology Software',
   description: 'Comprehensive astrology platform supporting Vedic, Western, and KP systems with advanced calculations and beautiful charts.',
   keywords: 'astrology, vedic astrology, western astrology, KP astrology, birth chart, horoscope, panchang, dasha',
-  authors: [{ name: 'AstroSuite Pro Team' }],
+  authors: [{ name: 'Prerana Astro Team' }],
   metadataBase: new URL('http://localhost:3000'),
   openGraph: {
-    title: 'AstroSuite Pro - Professional Astrology Software',
+    title: 'Prerana Astro - Professional Astrology Software',
     description: 'Create accurate astrological charts with advanced calculations',
     type: 'website',
   },

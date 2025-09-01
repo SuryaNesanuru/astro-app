@@ -186,7 +186,7 @@ describe('Dashboard Page', () => {
       
       expect(screen.getByText('Daily astrological calendar')).toBeInTheDocument()
       expect(screen.getByText('Specialized calculation tools')).toBeInTheDocument()
-      expect(screen.getByText('Learn about AstroSuite Pro')).toBeInTheDocument()
+      expect(screen.getByText('Learn about Prerana Astro')).toBeInTheDocument()
       expect(screen.getByText('Help us improve the platform')).toBeInTheDocument()
     })
 

@@ -32,7 +32,7 @@ describe('Home Page', () => {
   describe('Rendering', () => {
     it('renders the main heading correctly', () => {
       render(<Home />)
-      expect(screen.getByText('AstroSuite Pro')).toBeInTheDocument()
+      expect(screen.getByText('Prerana Astro')).toBeInTheDocument()
     })
 
     it('renders the professional badge', () => {
@@ -102,7 +102,7 @@ describe('Home Page', () => {
       
       render(<Home />)
       // Should still show the main content while loading
-      const headings = screen.getAllByText('AstroSuite Pro')
+      const headings = screen.getAllByText('Prerana Astro')
       expect(headings.length).toBeGreaterThan(0)
     })
   })
@@ -147,7 +147,7 @@ describe('Home Page', () => {
     it('displays footer information', () => {
       render(<Home />)
       
-      expect(screen.getByText('© 2024 AstroSuite Pro')).toBeInTheDocument()
+      expect(screen.getByText('© 2024 Prerana Astro')).toBeInTheDocument()
       expect(screen.getByText('Privacy Policy')).toBeInTheDocument()
       expect(screen.getByText('Terms of Service')).toBeInTheDocument()
       expect(screen.getByText('Support')).toBeInTheDocument()
@@ -158,7 +158,7 @@ describe('Home Page', () => {
     it('renders key benefits section', () => {
       render(<Home />)
       
-      expect(screen.getByText('Why Choose AstroSuite Pro?')).toBeInTheDocument()
+      expect(screen.getByText('Why Choose Prerana Astro?')).toBeInTheDocument()
       expect(screen.getByText('Swiss Ephemeris Accuracy')).toBeInTheDocument()
       expect(screen.getByText('Lightning Fast')).toBeInTheDocument()
       expect(screen.getByText('Global Coverage')).toBeInTheDocument()
@@ -187,7 +187,7 @@ describe('Home Page', () => {
       
       const h1 = screen.getByRole('heading', { level: 1 })
       expect(h1).toBeInTheDocument()
-      expect(h1).toHaveTextContent('AstroSuite Pro')
+      expect(h1).toHaveTextContent('Prerana Astro')
       
       const h2s = screen.getAllByRole('heading', { level: 2 })
       expect(h2s.length).toBeGreaterThan(0)

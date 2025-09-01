@@ -53,7 +53,7 @@ export default function Login() {
         <CardHeader className="space-y-1 text-center">
           <div className="flex items-center justify-center mb-4">
             <Star className="h-8 w-8 text-primary mr-2" />
-            <span className="text-2xl font-bold">AstroSuite Pro</span>
+            <span className="text-2xl font-bold">Prerana Astro</span>
           </div>
           <CardTitle className="text-2xl">Welcome back</CardTitle>
           <CardDescription>

@@ -53,7 +53,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/dashboard" className="flex items-center gap-2 font-bold text-xl">
             <Star className="h-6 w-6 text-primary" />
-            AstroSuite Pro
+            Prerana Astro
             <Badge variant="secondary" className="text-xs">Beta</Badge>
           </Link>
 
