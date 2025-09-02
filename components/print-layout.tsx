@@ -182,7 +182,7 @@ export function PrintLayout() {
                       </td>
                       <td className="border p-2">{planet.house}</td>
                       <td className="border p-2">
-                        {planet?.isRetrograde && (
+                        {planet.speed < 0 && (
                           <Badge variant="destructive" className="text-xs">
                             R
                           </Badge>

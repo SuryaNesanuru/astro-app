@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Calendar } from '@/components/ui/calendar'
 import { Badge } from '@/components/ui/badge'
-import { Progress } from '@/components/ui/progress'
+
 import { CalendarIcon, Sun, Moon, Clock, MapPin, Info } from 'lucide-react'
 import { format, addDays, subDays } from 'date-fns'
 import { cn } from '@/lib/utils'
@@ -199,7 +199,9 @@ export function DailyPanchang() {
                 <div className="text-sm text-muted-foreground mb-3">
                   {panchangData.tithi.paksha} Paksha
                 </div>
-                <Progress value={panchangData.tithi.completion} className="h-2" />
+                <div className="w-full bg-secondary rounded-full h-2">
+                  <div className="bg-primary h-2 rounded-full" style={{ width: `${panchangData.tithi.completion}%` }} />
+                </div>
                 <div className="text-xs text-muted-foreground mt-1">
                   {panchangData.tithi.completion.toFixed(1)}% complete
                 </div>
@@ -218,7 +220,9 @@ export function DailyPanchang() {
                 <div className="text-sm text-muted-foreground mb-3">
                   Lord: {panchangData.nakshatra.lord}
                 </div>
-                <Progress value={panchangData.nakshatra.completion} className="h-2" />
+                <div className="w-full bg-secondary rounded-full h-2">
+                  <div className="bg-primary h-2 rounded-full" style={{ width: `${panchangData.nakshatra.completion}%` }} />
+                </div>
                 <div className="text-xs text-muted-foreground mt-1">
                   {panchangData.nakshatra.completion.toFixed(1)}% complete
                 </div>
@@ -235,7 +239,9 @@ export function DailyPanchang() {
                 <div className="text-sm text-muted-foreground mb-3">
                   Number: {panchangData.yoga.number}
                 </div>
-                <Progress value={panchangData.yoga.completion} className="h-2" />
+                <div className="w-full bg-secondary rounded-full h-2">
+                  <div className="bg-primary h-2 rounded-full" style={{ width: `${panchangData.yoga.completion}%` }} />
+                </div>
                 <div className="text-xs text-muted-foreground mt-1">
                   {panchangData.yoga.completion.toFixed(1)}% complete
                 </div>
@@ -252,7 +258,9 @@ export function DailyPanchang() {
                 <div className="text-sm text-muted-foreground mb-3">
                   Number: {panchangData.karana.number}
                 </div>
-                <Progress value={panchangData.karana.completion} className="h-2" />
+                <div className="w-full bg-secondary rounded-full h-2">
+                  <div className="bg-primary h-2 rounded-full" style={{ width: `${panchangData.karana.completion}%` }} />
+                </div>
                 <div className="text-xs text-muted-foreground mt-1">
                   {panchangData.karana.completion.toFixed(1)}% complete
                 </div>
