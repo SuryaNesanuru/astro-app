@@ -19,6 +19,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { useTheme } from 'next-themes'
+import { useI18n } from '@/components/providers'
 
 export function Navigation() {
   const { data: session } = useSession()
@@ -26,14 +27,14 @@ export function Navigation() {
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [language, setLanguage] = useState('en')
+  const { t, locale, setLocale } = useI18n()
 
   const navigationItems = [
-    { href: '/dashboard', label: 'Dashboard', icon: BarChart3 },
-    { href: '/chart/new', label: 'New Chart', icon: Plus },
-    { href: '/transits', label: 'Transits', icon: BarChart3 },
-    { href: '/panchang', label: 'Panchang', icon: Calendar },
-    { href: '/calculators', label: 'Calculators', icon: Calculator },
+    { href: '/dashboard', label: t('navigation.dashboard'), icon: BarChart3 },
+    { href: '/chart/new', label: t('navigation.newChart'), icon: Plus },
+    { href: '/transits', label: t('navigation.transits'), icon: BarChart3 },
+    { href: '/panchang', label: t('navigation.panchang'), icon: Calendar },
+    { href: '/calculators', label: t('navigation.calculators'), icon: Calculator },
   ]
 
   const languages = [
@@ -81,7 +82,7 @@ export function Navigation() {
                 <Button variant="ghost" size="sm" className="gap-1">
                   <Languages className="h-4 w-4" />
                   <span className="hidden sm:inline">
-                    {languages.find(l => l.code === language)?.name}
+                    {languages.find(l => l.code === locale)?.name}
                   </span>
                   <ChevronDown className="h-3 w-3" />
                 </Button>
@@ -90,8 +91,8 @@ export function Navigation() {
                 {languages.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
-                    onClick={() => setLanguage(lang.code)}
-                    className={language === lang.code ? 'bg-accent' : ''}
+                    onClick={() => setLocale(lang.code as any)}
+                    className={locale === lang.code ? 'bg-accent' : ''}
                   >
                     {lang.name}
                   </DropdownMenuItem>
